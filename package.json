@@ -1,0 +1,39 @@
+{
+  "name": "touchmark-server",
+  "version": "0.0.1",
+"description": "🔐 Library for verifying secure digital signatures of HTTP requests",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiakhovetsS/touchmark-server.git"
+  },
+  "author": "Liakhovets Stas lyakhovetss@gmail.com",
+  "license": "MIT",
+  "keywords": [
+    "signature",
+    "fingerprint",
+    "hmac",
+    "sha256",
+    "security",
+    "authentication",
+    "typescript",
+    "http",
+    "api",
+    "crypto",
+    "digital-signature"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build && npm version patch"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "typescript": "^5.5.3"
+  },
+  "bugs": {
+    "url": "https://github.com/LiakhovetsS/touchmark-server/issues"
+  },
+  "homepage": "https://github.com/LiakhovetsS/touchmark-server#readme"
+}
