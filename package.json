@@ -1,6 +1,6 @@
 {
   "name": "touchmark-server",
-  "version": "0.0.1",
+  "version": "0.0.2-dev.0",
   "description": "🔐 Library for verifying secure digital signatures of HTTP requests",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
