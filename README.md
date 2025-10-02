@@ -7,7 +7,7 @@
 
 ### Description
 
-`touchmark-server` is a library for verifying secure digital signatures of HTTP requests. It protects your API from unauthorized requests, timing attacks, and signature replay.
+`touchmark-server` is a library for verifying secure digital signatures of HTTP requests. It protects your API from unauthorized requests, timing attacks, and signature replay and duplicate requests.
 
 ### Installation
 
@@ -82,7 +82,7 @@ For frontend signature generation, use [touchmark-client](https://www.npmjs.com/
 
 ### Опис
 
-`touchmark-server` — бібліотека для перевірки цифрових підписів HTTP-запитів. Захищає API від несанкціонованих запитів, таймінг-атак та повторного використання підпису.
+`touchmark-server` — бібліотека для перевірки цифрових підписів HTTP-запитів. Захищає API від несанкціонованих запитів, таймінг-атак та повторного використання підпису та дублюваних запитів.
 
 ### Встановлення
 
