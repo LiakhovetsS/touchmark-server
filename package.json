@@ -24,7 +24,7 @@
     "digital-signature"
   ],
   "scripts": {
-    "build": "tsc && npm version prerelease --preid dev",
+    "build": "tsc",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run clean && npm run build && npm version patch"
   },
