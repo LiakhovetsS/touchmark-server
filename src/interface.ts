@@ -10,6 +10,7 @@ export interface IConfig {
     allowedIpList: TAllowedIpList;
     whiteListPath: TWhiteListPath;
     assetsPathPrefixList: TPrefixList;
+    headerSignatureKey: string;
 }
 export interface IHeaders{
     [key: string]: string | undefined;

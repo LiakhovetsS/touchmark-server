@@ -23,6 +23,7 @@ class FingerprintCore {
 
     private readonly applyFingerprint: boolean = false;
     private signatureCache: TStore = new Map();
+    private readonly headerSignatureKey: string = 'x-request-uuid';
 
     constructor(options: IConfig) {
         this.applyFingerprint = options.applyFingerprint;
@@ -30,6 +31,7 @@ class FingerprintCore {
         this.ALLOWED_IP_LIST = options.allowedIpList;
         this.WHITE_LIST_PATH = options.whiteListPath;
         this.ASSETS_PATH_PREFIX_LIST = options.assetsPathPrefixList;
+        this.headerSignatureKey=options.headerSignatureKey
     }
 
     get isFilterInit(): boolean {
@@ -61,7 +63,7 @@ class FingerprintCore {
         if (isWhiteListedIP) return {status: true, message: SignatureErrorMessage.IP_WHITE_LISTED};
 
         const userAgent: string = headers['user-agent'] ? headers['user-agent'].replace(/\s+/g, '') : '';
-        const receivedSignature = headers['x-request-uuid'] || '';
+        const receivedSignature = headers[this.headerSignatureKey] || '';
         if (this.isFilterInit && !receivedSignature) return {
             status: false,
             message: SignatureErrorMessage.SIGNATURE_REQUIRED
@@ -149,6 +151,7 @@ class FingerprintCore {
             try {
                 const expectedBuf = Buffer.from(expected, 'hex');
                 const receivedBuf = Buffer.from(receivedSignature, 'hex');
+
                 // Перевірка таймінг-атак
                 return (
                     expectedBuf.length === receivedBuf.length &&
