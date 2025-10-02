@@ -1,7 +1,7 @@
 {
   "name": "touchmark-server",
   "version": "0.0.1",
-"description": "🔐 Library for verifying secure digital signatures of HTTP requests",
+  "description": "🔐 Library for verifying secure digital signatures of HTTP requests",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -24,7 +24,7 @@
     "digital-signature"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm version prerelease --preid dev",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run clean && npm run build && npm version patch"
   },
